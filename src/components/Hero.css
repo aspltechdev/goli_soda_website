@@ -1,0 +1,956 @@
+
+/* ======================================
+   GOLI SODA CINEMATIC HERO
+   Brand red: #ED1C24
+   ====================================== */
+
+.hero {
+  --brand-red: #ed1c24;
+  --hero-ink: #231f20;
+  --hero-muted: #6d6869;
+
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  min-height: 710px;
+  padding: 76px 0 90px;
+  background: #f7f3f2;
+  color: var(--hero-ink);
+}
+
+.hero-container {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1.03fr 0.97fr;
+  align-items: center;
+  gap: 22px;
+  width: min(1380px, 90%);
+  margin: 0 auto;
+}
+
+/* Background styling */
+
+.hero-background-shape {
+  position: absolute;
+  z-index: -1;
+  right: -210px;
+  bottom: -330px;
+  width: 800px;
+  height: 700px;
+  border-radius: 50%;
+  background: linear-gradient(
+    140deg,
+    rgba(237, 28, 36, 0.08),
+    rgba(237, 28, 36, 0.22)
+  );
+  transform: rotate(-25deg);
+}
+
+.hero-background-glow {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  right: 15%;
+  width: 440px;
+  height: 440px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.8);
+  filter: blur(85px);
+  pointer-events: none;
+}
+
+/* Left content */
+
+.hero-copy {
+  position: relative;
+  z-index: 3;
+  min-width: 0;
+}
+
+.hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  max-width: 100%;
+  margin-bottom: 28px;
+  padding: 11px 15px;
+  border: 1px solid rgba(237, 28, 36, 0.13);
+  border-radius: 50px;
+  background: rgba(255, 255, 255, 0.6);
+  color: #484143;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  line-height: 1.5;
+}
+
+.hero-eyebrow-dot {
+  width: 9px;
+  height: 9px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: var(--brand-red);
+  box-shadow: 0 0 0 4px rgba(237, 28, 36, 0.09);
+}
+
+.hero-copy h1 {
+  margin: 0 0 24px;
+  color: var(--hero-ink);
+  font-size: clamp(42px, 4.3vw, 68px);
+  font-weight: 850;
+  line-height: 1.04;
+  letter-spacing: -2.7px;
+}
+
+.hero-red-text {
+  color: var(--brand-red);
+}
+
+.hero-underline {
+  position: relative;
+  display: inline-block;
+}
+
+.hero-underline::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: -5px;
+  width: 65%;
+  height: 4px;
+  border-radius: 5px;
+  background: var(--brand-red);
+  transform: rotate(-2deg);
+}
+
+.hero-description {
+  max-width: 600px;
+  margin: 0 0 28px;
+  color: var(--hero-muted);
+  font-size: 15px;
+  line-height: 1.9;
+}
+
+/* Buttons */
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 13px;
+}
+
+.hero-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  min-height: 53px;
+  padding: 14px 20px;
+  border: 1px solid transparent;
+  border-radius: 50px;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 800;
+  line-height: 1.5;
+  text-align: center;
+  text-decoration: none;
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease,
+    color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.hero-btn-primary {
+  background: var(--brand-red);
+  color: #ffffff;
+  box-shadow: 0 9px 22px rgba(237, 28, 36, 0.17);
+}
+
+.hero-btn-primary:hover {
+  transform: translateY(-3px);
+  background: #cf151c;
+  box-shadow: 0 14px 30px rgba(237, 28, 36, 0.25);
+}
+
+.hero-btn-primary svg {
+  flex-shrink: 0;
+  transition: transform 0.25s ease;
+}
+
+.hero-btn-primary:hover svg {
+  transform: translateX(4px);
+}
+
+.hero-btn-secondary {
+  border-color: var(--brand-red);
+  background: rgba(255, 255, 255, 0.5);
+  color: var(--brand-red);
+}
+
+.hero-btn-secondary:hover {
+  transform: translateY(-3px);
+  background: var(--brand-red);
+  color: #ffffff;
+}
+
+/* Benefits */
+
+.hero-benefits {
+  display: flex;
+  align-items: stretch;
+  flex-wrap: wrap;
+  gap: 0;
+  margin-top: 35px;
+  padding-top: 25px;
+  border-top: 1px solid rgba(35, 31, 32, 0.12);
+}
+
+.hero-benefit {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+  padding: 0 17px;
+  border-right: 1px solid rgba(35, 31, 32, 0.13);
+  color: #393334;
+  font-size: 11px;
+  font-weight: 750;
+  line-height: 1.5;
+}
+
+.hero-benefit:first-child {
+  padding-left: 0;
+}
+
+.hero-benefit:last-child {
+  padding-right: 0;
+  border-right: 0;
+}
+
+.hero-benefit-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 43px;
+  height: 43px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: rgba(237, 28, 36, 0.09);
+  color: var(--brand-red);
+}
+
+/* Bottom note */
+
+.hero-bottom-note {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  margin-top: 36px;
+}
+
+.hero-mini-bottles {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border: 1px solid rgba(237, 28, 36, 0.17);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.65);
+  color: var(--brand-red);
+}
+
+.hero-bottom-note > span:last-child {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.hero-bottom-note strong,
+.hero-bottom-note small {
+  color: #716b6c;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 1.7px;
+  line-height: 1.5;
+}
+
+/* Right product visual */
+
+.hero-visual {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  min-height: 540px;
+  isolation: isolate;
+}
+
+.hero-red-orbit {
+  position: absolute;
+  z-index: -2;
+  top: 50%;
+  left: 50%;
+  width: min(88%, 510px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: var(--brand-red);
+  transform: translate(-50%, -50%);
+}
+
+.hero-red-orbit::before {
+  content: "";
+  position: absolute;
+  inset: -24px;
+  border: 1px solid rgba(237, 28, 36, 0.18);
+  border-radius: 50%;
+}
+
+.hero-image-halo {
+  position: absolute;
+  z-index: -1;
+  top: 50%;
+  left: 50%;
+  width: 80%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.38);
+  filter: blur(25px);
+  transform: translate(-50%, -50%);
+}
+
+/*
+  The generated reference is a wide composition.
+  object-position shifts the crop toward its bottle visual.
+*/
+
+.hero-product-image {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 530px;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.hero-product-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 78% center;
+  border-radius: 28px;
+  mix-blend-mode: multiply;
+  -webkit-mask-image: radial-gradient(
+    ellipse 72% 75% at 65% 48%,
+    #000 54%,
+    rgba(0, 0, 0, 0.9) 68%,
+    transparent 100%
+  );
+  mask-image: radial-gradient(
+    ellipse 72% 75% at 65% 48%,
+    #000 54%,
+    rgba(0, 0, 0, 0.9) 68%,
+    transparent 100%
+  );
+}
+
+/* Floating bubbles */
+
+.hero-bubble {
+  position: absolute;
+  z-index: 2;
+  display: block;
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at 30% 25%,
+    rgba(255, 255, 255, 0.98),
+    rgba(255, 255, 255, 0.25) 65%,
+    rgba(237, 28, 36, 0.08)
+  );
+  box-shadow:
+    inset -3px -4px 8px rgba(237, 28, 36, 0.08),
+    0 5px 15px rgba(35, 31, 32, 0.04);
+  animation: hero-bubble-float 5s ease-in-out infinite;
+}
+
+.hero-bubble-one {
+  top: 8%;
+  left: 14%;
+  width: 34px;
+  height: 34px;
+}
+
+.hero-bubble-two {
+  top: 20%;
+  right: 8%;
+  width: 20px;
+  height: 20px;
+  animation-delay: -1.5s;
+}
+
+.hero-bubble-three {
+  right: 15%;
+  bottom: 14%;
+  width: 42px;
+  height: 42px;
+  animation-delay: -2.3s;
+}
+
+.hero-bubble-four {
+  bottom: 25%;
+  left: 6%;
+  width: 15px;
+  height: 15px;
+  animation-delay: -0.7s;
+}
+
+@keyframes hero-bubble-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-13px);
+  }
+}
+
+/* Floating business cards */
+
+.hero-floating-card {
+  position: absolute;
+  z-index: 4;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  max-width: 230px;
+  padding: 15px 18px;
+  border: 1px solid rgba(35, 31, 32, 0.07);
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow: 0 15px 40px rgba(35, 31, 32, 0.1);
+  backdrop-filter: blur(12px);
+}
+
+.hero-card-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 43px;
+  height: 43px;
+  flex-shrink: 0;
+  border-radius: 12px;
+  background: rgba(237, 28, 36, 0.09);
+  color: var(--brand-red);
+}
+
+.hero-floating-card > span:last-child {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.hero-floating-card small {
+  color: #8a8182;
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: 1.3px;
+}
+
+.hero-floating-card strong {
+  color: #282223;
+  font-size: 12px;
+  font-weight: 800;
+  line-height: 1.5;
+}
+
+.hero-card-manufacturing {
+  top: 16%;
+  left: -1%;
+}
+
+.hero-card-growth {
+  right: -1%;
+  bottom: 21%;
+}
+
+/* Visual caption */
+
+.hero-image-caption {
+  position: absolute;
+  z-index: 4;
+  right: 0;
+  bottom: 2%;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  max-width: 255px;
+  color: #4a4042;
+  font-size: 11px;
+  font-weight: 750;
+  line-height: 1.7;
+}
+
+.hero-image-caption svg {
+  flex-shrink: 0;
+  color: var(--brand-red);
+}
+
+/* Scroll indicator */
+
+.hero-scroll {
+  position: absolute;
+  z-index: 3;
+  bottom: 23px;
+  left: 50%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #6d6465;
+  font-size: 11px;
+  font-weight: 700;
+  text-decoration: none;
+  transform: translateX(-50%);
+  transition: color 0.25s ease;
+}
+
+.hero-scroll:hover {
+  color: var(--brand-red);
+}
+
+.hero-scroll-line {
+  position: relative;
+  display: inline-block;
+  width: 22px;
+  height: 30px;
+  border: 1.5px solid #4b4344;
+  border-radius: 14px;
+}
+
+.hero-scroll-line::after {
+  content: "";
+  position: absolute;
+  top: 6px;
+  left: 50%;
+  width: 4px;
+  height: 6px;
+  border-radius: 5px;
+  background: var(--brand-red);
+  transform: translateX(-50%);
+  animation: hero-scroll-down 1.5s ease-in-out infinite;
+}
+
+@keyframes hero-scroll-down {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, 0);
+  }
+
+  40% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate(-50%, 9px);
+  }
+}
+
+/* Tablet */
+
+@media (max-width: 1100px) {
+  .hero {
+    padding: 65px 0 85px;
+  }
+
+  .hero-container {
+    width: 92%;
+    grid-template-columns: 1fr 0.9fr;
+    gap: 8px;
+  }
+
+  .hero-copy h1 {
+    font-size: clamp(39px, 5vw, 56px);
+    letter-spacing: -1.9px;
+  }
+
+  .hero-eyebrow {
+    font-size: 9px;
+    letter-spacing: 1px;
+  }
+
+  .hero-visual {
+    min-height: 450px;
+  }
+
+  .hero-product-image {
+    height: 450px;
+  }
+
+  .hero-benefit {
+    padding: 0 10px;
+    font-size: 10px;
+  }
+
+  .hero-benefit-icon {
+    width: 36px;
+    height: 36px;
+  }
+
+  .hero-floating-card {
+    padding: 12px;
+  }
+
+  .hero-card-manufacturing {
+    left: -3%;
+  }
+
+  .hero-card-growth {
+    right: -2%;
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 760px) {
+  .hero {
+    min-height: auto;
+    padding: 55px 0 85px;
+  }
+
+  .hero-container {
+    grid-template-columns: 1fr;
+    width: min(600px, 90%);
+    gap: 25px;
+  }
+
+  .hero-copy h1 {
+    font-size: clamp(39px, 8.5vw, 57px);
+    line-height: 1.08;
+    letter-spacing: -1.8px;
+  }
+
+  .hero-eyebrow {
+    margin-bottom: 22px;
+    padding: 9px 12px;
+    font-size: 9px;
+  }
+
+  .hero-description {
+    font-size: 14px;
+    line-height: 1.8;
+  }
+
+  .hero-actions {
+    align-items: stretch;
+  }
+
+  .hero-btn {
+    min-height: 49px;
+    padding: 12px 17px;
+    font-size: 11px;
+  }
+
+  .hero-benefits {
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: 28px;
+    padding-top: 22px;
+  }
+
+  .hero-benefit {
+    flex: 1;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    padding: 0 10px;
+    font-size: 10px;
+  }
+
+  .hero-benefit:first-child {
+    padding-left: 0;
+  }
+
+  .hero-benefit:last-child {
+    padding-right: 0;
+  }
+
+  .hero-benefit-icon {
+    width: 39px;
+    height: 39px;
+  }
+
+  .hero-bottom-note {
+    margin-top: 25px;
+  }
+
+  .hero-visual {
+    width: 100%;
+    min-height: 410px;
+    margin: 0 auto;
+  }
+
+  .hero-red-orbit {
+    width: 76%;
+  }
+
+  .hero-product-image {
+    height: 410px;
+  }
+
+  .hero-floating-card {
+    max-width: 190px;
+    gap: 9px;
+    padding: 10px 12px;
+    border-radius: 12px;
+  }
+
+  .hero-card-icon {
+    width: 35px;
+    height: 35px;
+  }
+
+  .hero-floating-card strong {
+    font-size: 10px;
+  }
+
+  .hero-floating-card small {
+    font-size: 7px;
+  }
+
+  .hero-card-manufacturing {
+    top: 13%;
+    left: 0;
+  }
+
+  .hero-card-growth {
+    right: 0;
+    bottom: 18%;
+  }
+
+  .hero-image-caption {
+    right: 4%;
+    bottom: 0;
+    max-width: 205px;
+    font-size: 10px;
+  }
+
+  .hero-scroll {
+    bottom: 22px;
+    white-space: nowrap;
+  }
+}
+
+/* Small phones */
+
+@media (max-width: 420px) {
+  .hero {
+    padding-top: 42px;
+  }
+
+  .hero-container {
+    width: 91%;
+  }
+
+  .hero-copy h1 {
+    font-size: clamp(35px, 9vw, 42px);
+    letter-spacing: -1.3px;
+  }
+
+  .hero-eyebrow {
+    gap: 7px;
+    font-size: 8px;
+    letter-spacing: 0.6px;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+  }
+
+  .hero-btn {
+    width: 100%;
+  }
+
+  .hero-benefits {
+    gap: 7px;
+  }
+
+  .hero-benefit {
+    padding: 0 6px;
+    font-size: 9px;
+  }
+
+  .hero-benefit-icon {
+    width: 34px;
+    height: 34px;
+  }
+
+  .hero-visual {
+    min-height: 335px;
+  }
+
+  .hero-product-image {
+    height: 335px;
+  }
+
+  .hero-floating-card {
+    max-width: 165px;
+    padding: 9px;
+  }
+
+  .hero-card-icon {
+    width: 30px;
+    height: 30px;
+  }
+
+  .hero-card-icon svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .hero-card-manufacturing {
+    top: 9%;
+  }
+
+  .hero-card-growth {
+    bottom: 16%;
+  }
+
+  .hero-image-caption {
+    max-width: 175px;
+    font-size: 9px;
+  }
+}
+
+/* Accessibility */
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-bubble,
+  .hero-scroll-line::after {
+    animation: none;
+  }
+
+  .hero-btn,
+  .hero-scroll {
+    transition: none;
+  }
+}
+
+/* =========================================
+   GOLI SODA — HERO BACKGROUND ONLY
+   Background image: herobg.png
+   Brand colour: Asoka Red #ED1C24
+   ========================================= */
+
+.hero-background {
+  position: absolute;
+  z-index: -3;
+  inset: 0;
+
+  background-image: var(--hero-bg-image);
+  background-repeat: no-repeat;
+  background-position: center right;
+  background-size: cover;
+
+  opacity: 1;
+  pointer-events: none;
+}
+
+/* Cream overlay to protect text readability */
+
+.hero-background-tint {
+  position: absolute;
+  z-index: -2;
+  inset: 0;
+
+  background: linear-gradient(
+    90deg,
+    #f7f3f2 0%,
+    rgba(247, 243, 242, 0.98) 30%,
+    rgba(247, 243, 242, 0.9) 45%,
+    rgba(247, 243, 242, 0.58) 65%,
+    rgba(247, 243, 242, 0.12) 100%
+  );
+
+  pointer-events: none;
+}
+
+/* Ambient white glow */
+
+.hero-background::after {
+  content: "";
+  position: absolute;
+  top: 5%;
+  right: 10%;
+
+  width: 340px;
+  height: 340px;
+
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.22);
+  filter: blur(80px);
+
+  pointer-events: none;
+}
+
+/* Tablet */
+
+@media (max-width: 1100px) {
+  .hero-background {
+    background-position: 62% center;
+  }
+
+  .hero-background-tint {
+    background: linear-gradient(
+      90deg,
+      rgba(247, 243, 242, 0.99) 0%,
+      rgba(247, 243, 242, 0.96) 40%,
+      rgba(247, 243, 242, 0.76) 65%,
+      rgba(247, 243, 242, 0.24) 100%
+    );
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 760px) {
+  .hero-background {
+    background-position: 65% center;
+    background-size: cover;
+  }
+
+  .hero-background-tint {
+    background: linear-gradient(
+      180deg,
+      rgba(247, 243, 242, 0.97) 0%,
+      rgba(247, 243, 242, 0.9) 48%,
+      rgba(247, 243, 242, 0.68) 100%
+    );
+  }
+}
+
+/* Small phones */
+
+@media (max-width: 420px) {
+  .hero-background {
+    background-position: 63% center;
+  }
+
+  .hero-background-tint {
+    background: linear-gradient(
+      180deg,
+      rgba(247, 243, 242, 0.98) 0%,
+      rgba(247, 243, 242, 0.92) 52%,
+      rgba(247, 243, 242, 0.78) 100%
+    );
+  }
+}

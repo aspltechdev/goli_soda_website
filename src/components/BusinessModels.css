@@ -1,0 +1,723 @@
+
+/* =========================================
+   BUSINESS MODELS — ASOKA GOLI SODA
+   ========================================= */
+
+.models-section {
+  --models-red: #ed1c24;
+  --models-red-dark: #c9151d;
+  --models-ink: #231f20;
+  --models-muted: #706869;
+  --models-cream: #fff8f6;
+
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding: 100px 0 75px;
+  background: #fff4f1;
+  color: var(--models-ink);
+}
+
+/* =========================================
+   BACKGROUND IMAGE
+   Bottles positioned in the top-right corner
+   ========================================= */
+
+.models-background {
+  position: absolute;
+  z-index: -3;
+  inset: 0;
+  background-image: var(--models-bg-image);
+  background-repeat: no-repeat;
+  background-position: top right;
+  background-size: 100% auto;
+  pointer-events: none;
+}
+
+/* Fade the background behind cards for readability */
+
+.models-background-overlay {
+  position: absolute;
+  z-index: -2;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 248, 246, 0.02) 0%,
+    rgba(255, 248, 246, 0.06) 20%,
+    rgba(255, 248, 246, 0.38) 34%,
+    rgba(255, 248, 246, 0.84) 51%,
+    rgba(255, 248, 246, 0.94) 75%,
+    rgba(255, 248, 246, 0.97) 100%
+  );
+  pointer-events: none;
+}
+
+/* Background glow */
+
+.models-background-glow {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  right: -100px;
+  width: 440px;
+  height: 440px;
+  border-radius: 50%;
+  background: rgba(237, 28, 36, 0.07);
+  filter: blur(100px);
+  pointer-events: none;
+}
+
+/* Oversized decorative typography */
+
+.models-watermark {
+  position: absolute;
+  z-index: -1;
+  top: 6%;
+  right: -35px;
+  color: rgba(237, 28, 36, 0.035);
+  font-size: clamp(120px, 17vw, 230px);
+  font-weight: 900;
+  letter-spacing: -12px;
+  writing-mode: vertical-rl;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* =========================================
+   CONTAINER
+   ========================================= */
+
+.models-container {
+  position: relative;
+  z-index: 1;
+  width: min(1380px, 90%);
+  margin: 0 auto;
+}
+
+/* =========================================
+   SECTION HEADING
+   ========================================= */
+
+.models-heading {
+  position: relative;
+  z-index: 2;
+  max-width: 780px;
+  margin-bottom: 35px;
+}
+
+.models-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 21px;
+  padding: 10px 15px;
+  border: 1px solid rgba(237, 28, 36, 0.17);
+  border-radius: 50px;
+  background: rgba(255, 255, 255, 0.82);
+  color: #514748;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.models-eyebrow-dot {
+  width: 9px;
+  height: 9px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: var(--models-red);
+  box-shadow: 0 0 0 4px rgba(237, 28, 36, 0.1);
+}
+
+.models-heading h2 {
+  margin: 0;
+  color: var(--models-ink);
+  font-size: clamp(40px, 4.5vw, 64px);
+  font-weight: 850;
+  line-height: 1.05;
+  letter-spacing: -2.5px;
+}
+
+.models-heading h2 span {
+  color: var(--models-red);
+}
+
+.models-heading-underline {
+  width: 180px;
+  height: 5px;
+  margin: 15px 0 18px;
+  border-radius: 10px;
+  background: var(--models-red);
+  transform: rotate(-1.5deg);
+}
+
+.models-heading p {
+  max-width: 650px;
+  margin: 0;
+  color: var(--models-muted);
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+/* =========================================
+   BUSINESS MODEL GRID
+   ========================================= */
+
+.models-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  align-items: stretch;
+  gap: 16px;
+}
+
+/* =========================================
+   MODEL CARD
+   ========================================= */
+
+.model-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.96);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.91);
+  box-shadow: 0 12px 35px rgba(91, 35, 35, 0.07);
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease,
+    border-color 0.35s ease;
+}
+
+.model-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(237, 28, 36, 0.22);
+  box-shadow: 0 22px 45px rgba(91, 35, 35, 0.14);
+}
+
+/* Card image */
+
+.model-image {
+  position: relative;
+  height: 185px;
+  flex-shrink: 0;
+  overflow: hidden;
+  background: #f2d9d5;
+}
+
+.model-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.65s ease;
+}
+
+.model-card:hover .model-image img {
+  transform: scale(1.07);
+}
+
+.model-image-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(35, 20, 20, 0.08) 0%,
+    transparent 40%,
+    rgba(35, 20, 20, 0.22) 100%
+  );
+  pointer-events: none;
+}
+
+/* Large card number */
+
+.model-image-number {
+  position: absolute;
+  top: 8px;
+  left: 15px;
+  color: rgba(255, 255, 255, 0.9);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 55px;
+  font-weight: 700;
+  line-height: 1;
+  text-shadow: 0 2px 12px rgba(35, 20, 20, 0.15);
+}
+
+/* Icon overlapping image and content */
+
+.model-image-icon {
+  position: absolute;
+  bottom: -1px;
+  left: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 54px;
+  height: 54px;
+  border: 5px solid #fff8f6;
+  border-radius: 50%;
+  background: #ffe7e5;
+  color: var(--models-red);
+  box-sizing: content-box;
+}
+
+/* =========================================
+   CARD CONTENT
+   ========================================= */
+
+.model-content {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 19px 18px 16px;
+}
+
+.model-subtitle {
+  display: inline-block;
+  margin-bottom: 9px;
+  color: #675b5c;
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: 0.75px;
+  line-height: 1.6;
+}
+
+.model-content h3 {
+  margin: 0 0 11px;
+  color: var(--models-ink);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(19px, 1.55vw, 24px);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.5px;
+}
+
+.model-content h3 span {
+  color: var(--models-red);
+}
+
+.model-description {
+  margin: 0;
+  color: var(--models-muted);
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.model-divider {
+  width: 100%;
+  height: 1px;
+  margin: 15px 0;
+  background: rgba(35, 31, 32, 0.1);
+}
+
+/* Feature list */
+
+.model-features {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  margin: 0 0 20px;
+  padding: 0;
+  list-style: none;
+}
+
+.model-features li {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  color: #5f5758;
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+.model-feature-check {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 17px;
+  height: 17px;
+  flex-shrink: 0;
+  margin-top: 1px;
+  border-radius: 50%;
+  background: var(--models-red);
+  color: #ffffff;
+}
+
+/* Card CTA */
+
+.model-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  width: 100%;
+  margin-top: auto;
+  padding-top: 13px;
+  border-top: 1px solid rgba(35, 31, 32, 0.09);
+  color: var(--models-red);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.model-link-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: var(--models-red);
+  color: #ffffff;
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease;
+}
+
+.model-link:hover .model-link-icon {
+  transform: translate(3px, -2px);
+  background: var(--models-red-dark);
+}
+
+/* =========================================
+   BOTTOM CTA
+   ========================================= */
+
+.models-bottom {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  width: min(1080px, 100%);
+  margin: 25px auto 0;
+  padding: 18px 26px;
+  border: 1px solid rgba(255, 255, 255, 0.96);
+  border-radius: 80px;
+  background: rgba(255, 255, 255, 0.78);
+  box-shadow: 0 12px 35px rgba(91, 35, 35, 0.06);
+  backdrop-filter: blur(14px);
+}
+
+.models-bottom-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 65px;
+  height: 65px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: #ffe6e4;
+  color: var(--models-red);
+}
+
+.models-bottom-copy {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 5px;
+  min-width: 0;
+}
+
+.models-bottom-copy > span {
+  color: #5c5051;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.models-bottom-copy h3 {
+  margin: 0;
+  color: var(--models-ink);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(17px, 1.8vw, 23px);
+  line-height: 1.35;
+}
+
+.models-bottom-copy h3 span {
+  color: var(--models-red);
+}
+
+.models-bottom-copy p {
+  margin: 0;
+  color: var(--models-muted);
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+/* Bottom CTA button */
+
+.models-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 13px;
+  min-height: 52px;
+  flex-shrink: 0;
+  padding: 14px 23px;
+  border-radius: 50px;
+  background: var(--models-red);
+  color: #ffffff;
+  box-shadow: 0 10px 24px rgba(237, 28, 36, 0.19);
+  font-size: 12px;
+  font-weight: 800;
+  text-decoration: none;
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.models-cta:hover {
+  transform: translateY(-3px);
+  background: var(--models-red-dark);
+  box-shadow: 0 15px 30px rgba(237, 28, 36, 0.25);
+}
+
+/* =========================================
+   TABLET
+   ========================================= */
+
+@media (max-width: 1150px) {
+  .models-section {
+    padding: 80px 0 65px;
+  }
+
+  .models-container {
+    width: 92%;
+  }
+
+  .models-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+  }
+
+  .model-image {
+    height: 220px;
+  }
+
+  .model-content {
+    padding: 20px;
+  }
+
+  .model-content h3 {
+    font-size: 24px;
+  }
+
+  .model-description {
+    font-size: 13px;
+  }
+
+  .model-features li {
+    font-size: 12px;
+  }
+
+  .models-bottom {
+    border-radius: 32px;
+  }
+
+  .models-background {
+    background-size: auto 680px;
+  }
+}
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media (max-width: 650px) {
+  .models-section {
+    padding: 62px 0;
+  }
+
+  .models-container {
+    width: min(540px, 90%);
+  }
+
+  .models-heading {
+    margin-bottom: 28px;
+  }
+
+  .models-eyebrow {
+    margin-bottom: 18px;
+    padding: 9px 12px;
+    font-size: 8px;
+    letter-spacing: 0.7px;
+  }
+
+  .models-heading h2 {
+    font-size: clamp(35px, 8.2vw, 48px);
+    line-height: 1.1;
+    letter-spacing: -1.5px;
+  }
+
+  .models-heading p {
+    font-size: 13px;
+    line-height: 1.8;
+  }
+
+  .models-heading-underline {
+    width: 125px;
+    height: 4px;
+  }
+
+  .models-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .model-card {
+    border-radius: 20px;
+  }
+
+  .model-image {
+    height: 220px;
+  }
+
+  .model-image-number {
+    font-size: 52px;
+  }
+
+  .model-content {
+    padding: 20px;
+  }
+
+  .model-content h3 {
+    font-size: 25px;
+  }
+
+  .model-description {
+    font-size: 13px;
+    line-height: 1.75;
+  }
+
+  .model-features {
+    gap: 12px;
+  }
+
+  .model-features li {
+    font-size: 12px;
+  }
+
+  .model-link {
+    font-size: 14px;
+  }
+
+  .models-bottom {
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 25px;
+  }
+
+  .models-bottom-icon {
+    width: 48px;
+    height: 48px;
+  }
+
+  .models-bottom-copy {
+    flex-basis: calc(100% - 65px);
+    justify-content: center;
+    min-height: 48px;
+  }
+
+  .models-bottom-copy h3 {
+    font-size: 19px;
+  }
+
+  .models-bottom-copy p {
+    font-size: 12px;
+  }
+
+  .models-cta {
+    width: 100%;
+    min-height: 49px;
+  }
+
+  /* Keep bottles visible at the top on mobile */
+  .models-background {
+    background-position: top right;
+    background-size: auto 420px;
+  }
+
+  .models-background-overlay {
+    background: linear-gradient(
+      180deg,
+      rgba(255, 248, 246, 0.08) 0%,
+      rgba(255, 248, 246, 0.48) 25%,
+      rgba(255, 248, 246, 0.91) 45%,
+      rgba(255, 248, 246, 0.97) 75%
+    );
+  }
+
+  .models-watermark {
+    right: -30px;
+    font-size: 100px;
+  }
+}
+
+/* =========================================
+   SMALL PHONES
+   ========================================= */
+
+@media (max-width: 380px) {
+  .models-section {
+    padding: 50px 0;
+  }
+
+  .models-heading h2 {
+    font-size: 32px;
+    letter-spacing: -1px;
+  }
+
+  .model-image {
+    height: 185px;
+  }
+
+  .model-content {
+    padding: 17px;
+  }
+
+  .model-content h3 {
+    font-size: 22px;
+  }
+
+  .model-subtitle {
+    font-size: 7px;
+  }
+
+  .model-description {
+    font-size: 12px;
+  }
+
+  .model-features li {
+    font-size: 11px;
+  }
+
+  .models-bottom-copy h3 {
+    font-size: 17px;
+  }
+
+  .models-background {
+    background-size: auto 350px;
+  }
+}
+
+/* =========================================
+   REDUCED MOTION
+   ========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .model-card,
+  .model-image img,
+  .model-link-icon,
+  .models-cta {
+    transition: none;
+  }
+}

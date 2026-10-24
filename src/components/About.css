@@ -1,0 +1,858 @@
+
+/* =========================================
+   ABOUT SECTION — ASOKA GOLI SODA
+   ========================================= */
+
+.about-section {
+  --about-red: #ed1c24;
+  --about-red-dark: #cf151c;
+  --about-ink: #231f20;
+  --about-muted: #71696a;
+  --about-cream: #faf6f4;
+
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding: 110px 0;
+  background: var(--about-cream);
+  color: var(--about-ink);
+}
+
+/* Background decoration */
+
+.about-bg-glow {
+  position: absolute;
+  z-index: -2;
+  top: 8%;
+  left: 20%;
+  width: 450px;
+  height: 450px;
+  border-radius: 50%;
+  background: rgba(237, 28, 36, 0.055);
+  filter: blur(100px);
+  pointer-events: none;
+}
+
+.about-bg-watermark {
+  position: absolute;
+  z-index: -1;
+  top: 50%;
+  right: -65px;
+  color: rgba(237, 28, 36, 0.025);
+  font-size: clamp(100px, 17vw, 240px);
+  font-weight: 900;
+  letter-spacing: -10px;
+  writing-mode: vertical-rl;
+  transform: translateY(-50%);
+  pointer-events: none;
+  user-select: none;
+}
+
+/* Main layout */
+
+.about-container {
+  display: grid;
+  grid-template-columns: 0.98fr 1.02fr;
+  align-items: center;
+  gap: clamp(45px, 6vw, 95px);
+  width: min(1380px, 90%);
+  margin: 0 auto;
+}
+
+/* =========================================
+   LEFT PRODUCT COLLAGE
+   ========================================= */
+
+.about-visual {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  min-height: 570px;
+  isolation: isolate;
+}
+
+.about-red-orbit {
+  position: absolute;
+  z-index: -2;
+  top: 50%;
+  left: 48%;
+  width: 78%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: linear-gradient(
+    145deg,
+    #ffb2b5 0%,
+    #ff777d 40%,
+    rgba(237, 28, 36, 0.88) 100%
+  );
+  transform: translate(-50%, -50%) rotate(-12deg);
+}
+
+.about-red-orbit::before {
+  content: "";
+  position: absolute;
+  inset: -20px;
+  border: 1px solid rgba(237, 28, 36, 0.18);
+  border-radius: 50%;
+}
+
+/* Product image frame */
+
+.about-image-frame {
+  position: relative;
+  z-index: 1;
+  width: 82%;
+  height: 490px;
+  overflow: hidden;
+  border: 7px solid rgba(255, 255, 255, 0.88);
+  border-radius: 26px;
+  background: #f2e5df;
+  box-shadow: 0 28px 65px rgba(72, 34, 34, 0.16);
+  transform: rotate(-4deg);
+  transition:
+    transform 0.5s ease,
+    box-shadow 0.5s ease;
+}
+
+.about-image-frame:hover {
+  transform: rotate(-1deg) translateY(-5px);
+  box-shadow: 0 35px 80px rgba(72, 34, 34, 0.2);
+}
+
+.about-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.about-image-shade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    transparent 55%,
+    rgba(35, 31, 32, 0.14) 100%
+  );
+  pointer-events: none;
+}
+
+/* Floating information cards */
+
+.about-floating-card {
+  position: absolute;
+  z-index: 4;
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  max-width: 290px;
+  padding: 15px 17px;
+  border: 1px solid rgba(35, 31, 32, 0.055);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow: 0 18px 45px rgba(35, 31, 32, 0.11);
+  backdrop-filter: blur(15px);
+}
+
+.about-card-top {
+  top: 12%;
+  left: -2%;
+}
+
+.about-card-bottom {
+  right: -3%;
+  bottom: 9%;
+  max-width: 330px;
+  padding: 18px 20px;
+}
+
+.about-card-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  flex-shrink: 0;
+  border-radius: 14px;
+  background: #fff0ef;
+  color: var(--about-red);
+}
+
+.about-card-icon-large {
+  width: 56px;
+  height: 56px;
+  border-radius: 17px;
+}
+
+.about-card-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.about-card-copy small {
+  color: #847b7c;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  line-height: 1.5;
+}
+
+.about-card-copy strong {
+  color: var(--about-ink);
+  font-size: 12px;
+  font-weight: 800;
+  line-height: 1.5;
+}
+
+.about-card-bottom .about-card-copy strong {
+  font-size: 13px;
+}
+
+.about-card-bottom .about-card-copy small {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0;
+}
+
+/* Decorative bubbles */
+
+.about-bubble {
+  position: absolute;
+  z-index: 3;
+  border: 1px solid rgba(255, 255, 255, 0.95);
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at 30% 25%,
+    #ffffff,
+    rgba(255, 255, 255, 0.45) 55%,
+    rgba(237, 28, 36, 0.12)
+  );
+  box-shadow: 0 5px 15px rgba(35, 31, 32, 0.06);
+  pointer-events: none;
+  animation: about-bubble-float 5s ease-in-out infinite;
+}
+
+.about-bubble-one {
+  top: 9%;
+  right: 15%;
+  width: 29px;
+  height: 29px;
+}
+
+.about-bubble-two {
+  top: 29%;
+  left: 4%;
+  width: 18px;
+  height: 18px;
+  animation-delay: -1s;
+}
+
+.about-bubble-three {
+  right: 8%;
+  bottom: 24%;
+  width: 37px;
+  height: 37px;
+  animation-delay: -2s;
+}
+
+.about-bubble-four {
+  bottom: 7%;
+  left: 13%;
+  width: 15px;
+  height: 15px;
+  animation-delay: -3s;
+}
+
+@keyframes about-bubble-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.about-sparkle {
+  position: absolute;
+  z-index: 3;
+  color: var(--about-red);
+}
+
+.about-sparkle-one {
+  top: 22%;
+  right: 4%;
+}
+
+/* =========================================
+   RIGHT CONTENT
+   ========================================= */
+
+.about-copy {
+  position: relative;
+  z-index: 2;
+  min-width: 0;
+}
+
+.about-section-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 23px;
+  padding: 10px 14px;
+  border: 1px solid rgba(237, 28, 36, 0.15);
+  border-radius: 50px;
+  background: rgba(255, 255, 255, 0.7);
+  color: #4d4445;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.3px;
+}
+
+.about-tag-dot {
+  width: 9px;
+  height: 9px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: var(--about-red);
+  box-shadow: 0 0 0 4px rgba(237, 28, 36, 0.1);
+}
+
+.about-copy h2 {
+  margin: 0;
+  color: var(--about-ink);
+  font-size: clamp(38px, 3.8vw, 56px);
+  font-weight: 850;
+  line-height: 1.07;
+  letter-spacing: -2px;
+}
+
+.about-copy h2 span {
+  color: var(--about-red);
+}
+
+.about-title-underline {
+  width: 150px;
+  height: 4px;
+  margin: 13px 0 24px;
+  border-radius: 5px;
+  background: var(--about-red);
+  transform: rotate(-1.5deg);
+}
+
+.about-intro {
+  margin: 0 0 16px;
+  color: #554d4e;
+  font-size: 15px;
+  font-weight: 550;
+  line-height: 1.8;
+}
+
+.about-description {
+  margin: 0 0 22px;
+  color: var(--about-muted);
+  font-size: 14px;
+  line-height: 1.85;
+}
+
+/* Checklist */
+
+.about-highlights {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+  margin: 23px 0 28px;
+}
+
+.about-highlight {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #393334;
+  font-size: 13px;
+  font-weight: 550;
+  line-height: 1.6;
+}
+
+.about-check-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 29px;
+  height: 29px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: var(--about-red);
+  color: #ffffff;
+  box-shadow: 0 0 0 5px rgba(237, 28, 36, 0.09);
+}
+
+/* Build / Grow values */
+
+.about-values {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 20px;
+  padding: 23px 0;
+  border-top: 1px solid rgba(35, 31, 32, 0.12);
+  border-bottom: 1px solid rgba(35, 31, 32, 0.12);
+}
+
+.about-value {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  min-width: 0;
+}
+
+.about-value-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 59px;
+  height: 59px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: rgba(237, 28, 36, 0.09);
+  color: var(--about-red);
+  transition:
+    color 0.3s ease,
+    background 0.3s ease,
+    transform 0.3s ease;
+}
+
+.about-value:hover .about-value-icon {
+  transform: translateY(-3px);
+  background: var(--about-red);
+  color: #ffffff;
+}
+
+.about-value > div {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.about-value strong {
+  color: var(--about-ink);
+  font-size: 16px;
+  font-weight: 850;
+}
+
+.about-value > div span {
+  color: var(--about-muted);
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+.about-value-divider {
+  width: 1px;
+  height: 55px;
+  background: rgba(35, 31, 32, 0.12);
+}
+
+/* CTA */
+
+.about-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  min-height: 56px;
+  margin-top: 25px;
+  padding: 14px 23px;
+  border: 1px solid var(--about-red);
+  border-radius: 50px;
+  background: var(--about-red);
+  color: #ffffff;
+  box-shadow: 0 10px 24px rgba(237, 28, 36, 0.18);
+  font-size: 13px;
+  font-weight: 800;
+  text-decoration: none;
+  transition:
+    background 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.about-link:hover {
+  transform: translateY(-3px);
+  background: var(--about-red-dark);
+  box-shadow: 0 15px 30px rgba(237, 28, 36, 0.24);
+}
+
+.about-link-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.25s ease;
+}
+
+.about-link:hover .about-link-icon {
+  transform: translate(3px, -3px);
+}
+
+/* =========================================
+   TABLET
+   ========================================= */
+
+@media (max-width: 1100px) {
+  .about-section {
+    padding: 85px 0;
+  }
+
+  .about-container {
+    width: 92%;
+    gap: 40px;
+  }
+
+  .about-visual {
+    min-height: 480px;
+  }
+
+  .about-image-frame {
+    width: 86%;
+    height: 420px;
+  }
+
+  .about-copy h2 {
+    font-size: clamp(35px, 4.2vw, 46px);
+    letter-spacing: -1.6px;
+  }
+
+  .about-intro {
+    font-size: 14px;
+  }
+
+  .about-description {
+    font-size: 13px;
+  }
+
+  .about-card-top {
+    left: -2%;
+  }
+
+  .about-card-bottom {
+    right: -2%;
+    max-width: 275px;
+  }
+
+  .about-floating-card {
+    padding: 12px;
+  }
+
+  .about-values {
+    gap: 12px;
+  }
+
+  .about-value {
+    gap: 9px;
+  }
+
+  .about-value-icon {
+    width: 45px;
+    height: 45px;
+  }
+
+  .about-value strong {
+    font-size: 14px;
+  }
+}
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media (max-width: 760px) {
+  .about-section {
+    padding: 65px 0;
+  }
+
+  .about-container {
+    grid-template-columns: 1fr;
+    width: min(590px, 90%);
+    gap: 42px;
+  }
+
+  .about-visual {
+    min-height: 430px;
+  }
+
+  .about-image-frame {
+    width: 78%;
+    height: 380px;
+    border-width: 5px;
+    border-radius: 22px;
+  }
+
+  .about-red-orbit {
+    width: 78%;
+  }
+
+  .about-card-top {
+    top: 9%;
+    left: -1%;
+  }
+
+  .about-card-bottom {
+    right: -1%;
+    bottom: 5%;
+    max-width: 290px;
+  }
+
+  .about-floating-card {
+    gap: 10px;
+    padding: 11px 12px;
+    border-radius: 14px;
+  }
+
+  .about-card-icon {
+    width: 39px;
+    height: 39px;
+  }
+
+  .about-card-icon-large {
+    width: 45px;
+    height: 45px;
+  }
+
+  .about-card-copy strong {
+    font-size: 10px;
+  }
+
+  .about-card-copy small {
+    font-size: 8px;
+  }
+
+  .about-copy h2 {
+    font-size: clamp(38px, 8vw, 51px);
+    line-height: 1.1;
+  }
+
+  .about-intro {
+    font-size: 14px;
+  }
+
+  .about-description {
+    font-size: 13px;
+  }
+
+  .about-values {
+    gap: 12px;
+    padding: 20px 0;
+  }
+
+  .about-value {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .about-value-icon {
+    width: 46px;
+    height: 46px;
+  }
+
+  .about-value-divider {
+    height: 90px;
+    align-self: center;
+  }
+
+  .about-value > div span {
+    font-size: 10px;
+  }
+
+  .about-link {
+    min-height: 51px;
+    font-size: 12px;
+  }
+
+  .about-bg-watermark {
+    right: -40px;
+    font-size: 115px;
+  }
+}
+
+/* =========================================
+   SMALL PHONES
+   ========================================= */
+
+@media (max-width: 420px) {
+  .about-section {
+    padding: 52px 0;
+  }
+
+  .about-container {
+    width: 91%;
+    gap: 35px;
+  }
+
+  .about-visual {
+    min-height: 350px;
+  }
+
+  .about-image-frame {
+    width: 78%;
+    height: 310px;
+  }
+
+  .about-card-top {
+    top: 7%;
+    left: -2%;
+  }
+
+  .about-card-bottom {
+    right: -2%;
+    bottom: 4%;
+    max-width: 240px;
+  }
+
+  .about-floating-card {
+    gap: 8px;
+    padding: 9px;
+  }
+
+  .about-card-icon {
+    width: 33px;
+    height: 33px;
+  }
+
+  .about-card-icon svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .about-card-icon-large {
+    width: 38px;
+    height: 38px;
+  }
+
+  .about-card-copy strong {
+    font-size: 9px;
+  }
+
+  .about-card-copy small {
+    font-size: 7px;
+  }
+
+  .about-copy h2 {
+    font-size: 36px;
+    letter-spacing: -1.2px;
+  }
+
+  .about-section-tag {
+    margin-bottom: 18px;
+    font-size: 8px;
+    letter-spacing: 0.8px;
+  }
+
+  .about-highlight {
+    align-items: flex-start;
+    font-size: 12px;
+  }
+
+  .about-check-icon {
+    width: 25px;
+    height: 25px;
+  }
+
+  .about-values {
+    gap: 9px;
+  }
+
+  .about-value-icon {
+    width: 39px;
+    height: 39px;
+  }
+
+  .about-value-icon svg {
+    width: 19px;
+    height: 19px;
+  }
+
+  .about-value strong {
+    font-size: 13px;
+  }
+
+  .about-value > div span {
+    font-size: 9px;
+  }
+}
+
+/* Accessibility */
+
+@media (prefers-reduced-motion: reduce) {
+  .about-bubble {
+    animation: none;
+  }
+
+  .about-image-frame,
+  .about-link,
+  .about-value-icon {
+    transition: none;
+  }
+}
+
+
+
+/* =========================================
+   ABOUT BACKGROUND IMAGE
+   ========================================= */
+
+.about-section {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background: #faf6f4;
+}
+
+/* Generated background artwork */
+.about-background {
+  position: absolute;
+  z-index: -3;
+  inset: 0;
+  background-image: var(--about-bg-image);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  opacity: 0.95;
+  pointer-events: none;
+}
+
+/* Preserve readable text on the right */
+.about-background-overlay {
+  position: absolute;
+  z-index: -2;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(250, 246, 244, 0.05) 0%,
+    rgba(250, 246, 244, 0.2) 34%,
+    rgba(250, 246, 244, 0.88) 57%,
+    rgba(250, 246, 244, 0.97) 100%
+  );
+  pointer-events: none;
+}
+
+/* Tablet */
+@media (max-width: 760px) {
+  .about-background {
+    background-position: 28% center;
+    opacity: 0.55;
+  }
+
+  .about-background-overlay {
+    background: linear-gradient(
+      180deg,
+      rgba(250, 246, 244, 0.5) 0%,
+      rgba(250, 246, 244, 0.88) 42%,
+      rgba(250, 246, 244, 0.98) 100%
+    );
+  }
+}

@@ -1,0 +1,480 @@
+
+/* =========================================
+   GOLI SODA BUSINESS CONSULTANCY
+   PREMIUM DARK FOOTER
+========================================= */
+
+.professional-footer {
+  --pf-bg: #101114;
+  --pf-surface: #17191d;
+  --pf-red: #ed1c24;
+  --pf-red-dark: #c8101b;
+  --pf-text: #f5f5f6;
+  --pf-muted: #a1a2a8;
+  --pf-border: rgba(255, 255, 255, 0.1);
+
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  background:
+    radial-gradient(
+      ellipse at 0% 0%,
+      rgba(237, 28, 36, 0.09),
+      transparent 38%
+    ),
+    radial-gradient(
+      ellipse at 100% 100%,
+      rgba(237, 28, 36, 0.045),
+      transparent 32%
+    ),
+    var(--pf-bg);
+  color: var(--pf-text);
+  font-family: inherit;
+}
+
+.professional-footer *,
+.professional-footer *::before,
+.professional-footer *::after {
+  box-sizing: border-box;
+}
+
+.pf-container {
+  width: min(1240px, calc(100% - 64px));
+  margin: 0 auto;
+}
+
+/* =========================================
+   MAIN FOOTER GRID
+========================================= */
+
+.pf-main {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1.45fr)
+    minmax(0, 0.75fr)
+    minmax(0, 1fr)
+    minmax(0, 1.1fr);
+  gap: 45px;
+  padding: 72px 0 60px;
+}
+
+/* =========================================
+   BRAND & LOGO
+========================================= */
+
+.pf-brand {
+  min-width: 0;
+  max-width: 350px;
+}
+
+.pf-logo {
+  display: inline-flex;
+  align-items: center;
+  max-width: 100%;
+  margin-bottom: 20px;
+  text-decoration: none;
+}
+
+.pf-logo-image {
+  display: block;
+  width: 220px;
+  max-width: 100%;
+  height: auto;
+  max-height: 90px;
+  object-fit: contain;
+  object-position: left center;
+}
+
+.pf-brand-name {
+  margin: 0 0 15px;
+  color: #ffffff;
+  font-size: 19px;
+  font-weight: 750;
+  line-height: 1.5;
+  letter-spacing: -0.35px;
+}
+
+.pf-brand-name span {
+  display: block;
+  margin-top: 2px;
+  color: var(--pf-red);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.6px;
+}
+
+.pf-description {
+  max-width: 330px;
+  margin: 0 0 23px;
+  color: var(--pf-muted);
+  font-size: 13px;
+  line-height: 1.9;
+}
+
+/* =========================================
+   WHATSAPP BUTTON
+========================================= */
+
+.pf-whatsapp {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 12px 14px;
+  border: 1px solid var(--pf-border);
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.025);
+  color: #e9e9eb;
+  font-size: 12px;
+  font-weight: 600;
+  text-decoration: none;
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease,
+    color 0.25s ease;
+}
+
+.pf-whatsapp svg {
+  flex-shrink: 0;
+}
+
+.pf-whatsapp svg:first-child {
+  color: #ed4147;
+}
+
+.pf-whatsapp:hover {
+  border-color: var(--pf-red);
+  background: rgba(237, 28, 36, 0.1);
+  color: #ffffff;
+}
+
+/* =========================================
+   NAVIGATION COLUMNS
+========================================= */
+
+.pf-column,
+.pf-contact {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.pf-column h3,
+.pf-contact h3 {
+  position: relative;
+  margin: 5px 0 27px;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: 0.1px;
+}
+
+.pf-column h3::after,
+.pf-contact h3::after {
+  position: absolute;
+  bottom: -11px;
+  left: 0;
+  width: 27px;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--pf-red);
+  content: "";
+}
+
+.pf-column a {
+  margin-bottom: 15px;
+  color: var(--pf-muted);
+  font-size: 12px;
+  line-height: 1.6;
+  text-decoration: none;
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.pf-column a:hover {
+  color: #ffffff;
+  transform: translateX(3px);
+}
+
+/* =========================================
+   CONTACT COLUMN
+========================================= */
+
+.pf-contact h3 {
+  margin-bottom: 24px;
+}
+
+.pf-contact > p {
+  margin: 0 0 20px;
+  color: var(--pf-muted);
+  font-size: 12px;
+  line-height: 1.9;
+}
+
+.pf-contact-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 13px;
+  min-height: 44px;
+  padding: 0 16px;
+  border: 1px solid var(--pf-red);
+  border-radius: 5px;
+  background: var(--pf-red);
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 650;
+  text-decoration: none;
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.pf-contact-button svg {
+  flex-shrink: 0;
+}
+
+.pf-contact-button:hover {
+  transform: translateY(-2px);
+  border-color: var(--pf-red-dark);
+  background: var(--pf-red-dark);
+  box-shadow: 0 7px 20px rgba(237, 28, 36, 0.16);
+}
+
+.pf-contact-detail {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-top: 18px;
+  color: var(--pf-muted);
+  font-size: 11px;
+  line-height: 1.8;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.pf-contact-detail svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+  color: var(--pf-red);
+}
+
+a.pf-contact-detail:hover {
+  color: #ffffff;
+}
+
+/* =========================================
+   COPYRIGHT BOTTOM BAR
+========================================= */
+
+.pf-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  min-height: 74px;
+  border-top: 1px solid var(--pf-border);
+}
+
+.pf-bottom p {
+  margin: 0;
+  color: #96969d;
+  font-size: 11px;
+  line-height: 1.8;
+}
+
+.pf-bottom p strong {
+  color: #d7d7da;
+  font-weight: 600;
+}
+
+.pf-bottom-tagline {
+  color: #888991;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-align: center;
+}
+
+.pf-back-top {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: #e3e3e6;
+  font-size: 11px;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color 0.2s ease;
+}
+
+.pf-back-top svg {
+  flex-shrink: 0;
+  color: var(--pf-red);
+}
+
+.pf-back-top:hover {
+  color: var(--pf-red);
+}
+
+/* =========================================
+   TABLET RESPONSIVE
+========================================= */
+
+@media (max-width: 1024px) {
+  .pf-main {
+    grid-template-columns:
+      minmax(0, 1.2fr)
+      minmax(0, 1fr)
+      minmax(0, 1fr);
+    gap: 38px 28px;
+    padding: 60px 0 48px;
+  }
+
+  .pf-brand {
+    grid-column: 1 / -1;
+    max-width: 550px;
+  }
+
+  .pf-description {
+    max-width: 470px;
+  }
+}
+
+/* =========================================
+   MOBILE RESPONSIVE
+========================================= */
+
+@media (max-width: 640px) {
+  .pf-container {
+    width: calc(100% - 40px);
+  }
+
+  .pf-main {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 35px 20px;
+    padding: 45px 0 34px;
+  }
+
+  .pf-brand {
+    grid-column: 1 / -1;
+    max-width: 100%;
+  }
+
+  .pf-logo {
+    margin-bottom: 16px;
+  }
+
+  .pf-logo-image {
+    width: 190px;
+    max-height: 75px;
+  }
+
+  .pf-brand-name {
+    font-size: 18px;
+  }
+
+  .pf-brand-name span {
+    font-size: 12px;
+  }
+
+  .pf-description {
+    max-width: 390px;
+    margin-bottom: 20px;
+    font-size: 12px;
+  }
+
+  .pf-column h3,
+  .pf-contact h3 {
+    margin-top: 0;
+    margin-bottom: 26px;
+    font-size: 13px;
+  }
+
+  .pf-column a {
+    margin-bottom: 13px;
+    font-size: 11px;
+  }
+
+  .pf-contact {
+    grid-column: 1 / -1;
+    padding-top: 25px;
+    border-top: 1px solid var(--pf-border);
+  }
+
+  .pf-contact > p {
+    max-width: 360px;
+  }
+
+  .pf-bottom {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 13px;
+    padding: 20px 0;
+  }
+
+  .pf-bottom p {
+    font-size: 10px;
+  }
+
+  .pf-bottom-tagline {
+    font-size: 9px;
+    text-align: left;
+  }
+}
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 380px) {
+  .pf-container {
+    width: calc(100% - 32px);
+  }
+
+  .pf-main {
+    column-gap: 14px;
+  }
+
+  .pf-logo-image {
+    width: 170px;
+  }
+
+  .pf-brand-name {
+    font-size: 16px;
+  }
+
+  .pf-column h3,
+  .pf-contact h3 {
+    font-size: 12px;
+  }
+
+  .pf-column a {
+    font-size: 10px;
+  }
+
+  .pf-whatsapp {
+    gap: 7px;
+    padding: 11px;
+    font-size: 11px;
+  }
+}
+
+/* =========================================
+   ACCESSIBILITY
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .professional-footer *,
+  .professional-footer *::before,
+  .professional-footer *::after {
+    scroll-behavior: auto !important;
+    transition: none !important;
+    animation: none !important;
+  }
+}

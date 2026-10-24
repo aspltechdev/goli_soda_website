@@ -1,0 +1,684 @@
+
+/* ==========================================
+   AUDIENCE SECTION — GOLI SODA CINEMATIC
+   Brand colors: Red + Cream + Charcoal
+========================================== */
+
+.audience-section {
+  --audience-red: #ed1c24;
+  --audience-red-dark: #c8101b;
+  --audience-ink: #211d1e;
+  --audience-muted: #706666;
+  --audience-cream: #fff5ef;
+
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding: 64px 0 48px;
+  background: var(--audience-cream);
+  color: var(--audience-ink);
+}
+
+/* Full-section decorative background */
+
+.audience-background {
+  position: absolute;
+  z-index: -3;
+  inset: 0;
+  background-image: var(--audience-bg-image);
+  background-repeat: no-repeat;
+  background-position: right bottom;
+  background-size: cover;
+  opacity: 0.72;
+  pointer-events: none;
+}
+
+.audience-background-overlay {
+  position: absolute;
+  z-index: -2;
+  inset: 0;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(255, 245, 239, 0.98) 0%,
+      rgba(255, 245, 239, 0.94) 42%,
+      rgba(255, 245, 239, 0.55) 75%,
+      rgba(255, 245, 239, 0.28) 100%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(255, 245, 239, 0.16) 0%,
+      rgba(255, 245, 239, 0.55) 55%,
+      rgba(255, 245, 239, 0.92) 100%
+    );
+  pointer-events: none;
+}
+
+.audience-container {
+  position: relative;
+  z-index: 1;
+  width: min(1500px, calc(100% - 80px));
+  margin-inline: auto;
+}
+
+/* ==========================================
+   HERO HEADING + FLOATING BOTTLES
+========================================== */
+
+.audience-hero {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+  align-items: center;
+  gap: 24px;
+  min-height: 390px;
+  margin-bottom: 28px;
+}
+
+.audience-heading {
+  position: relative;
+  z-index: 2;
+  max-width: 690px;
+  padding: 24px 0;
+}
+
+.audience-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 11px;
+  margin-bottom: 23px;
+  padding: 10px 16px;
+  border: 1px solid rgba(237, 28, 36, 0.2);
+  border-radius: 50px;
+  background: rgba(255, 255, 255, 0.86);
+  color: #393032;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.1px;
+}
+
+.audience-eyebrow-dot {
+  width: 10px;
+  height: 10px;
+  flex: 0 0 auto;
+  border-radius: 50%;
+  background: var(--audience-red);
+  box-shadow: 0 0 0 5px rgba(237, 28, 36, 0.12);
+}
+
+.audience-heading h2 {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(42px, 4.4vw, 70px);
+  font-weight: 700;
+  line-height: 0.99;
+  letter-spacing: -2.5px;
+}
+
+.audience-heading h2 span {
+  color: var(--audience-red);
+}
+
+.audience-underline {
+  width: 165px;
+  height: 6px;
+  margin: 22px 0 21px;
+  border-radius: 10px;
+  background: var(--audience-red);
+  transform: rotate(-2deg);
+}
+
+.audience-heading > p {
+  max-width: 540px;
+  margin: 0 0 27px;
+  color: var(--audience-muted);
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+.audience-hero-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 17px;
+  min-height: 55px;
+  padding: 0 23px;
+  border: 1px solid var(--audience-red);
+  border-radius: 50px;
+  background: var(--audience-red);
+  box-shadow: 0 10px 25px rgba(237, 28, 36, 0.2);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 800;
+  text-decoration: none;
+  transition:
+    background 0.25s ease,
+    box-shadow 0.25s ease,
+    transform 0.25s ease;
+}
+
+.audience-hero-cta:hover {
+  transform: translateY(-3px);
+  background: var(--audience-red-dark);
+  box-shadow: 0 15px 30px rgba(237, 28, 36, 0.28);
+}
+
+/* The artwork floats independently over the background */
+
+.audience-product-scene {
+  position: absolute;
+  z-index: 1;
+  top: -35px;
+  right: -30px;
+  width: 62%;
+  height: 470px;
+  overflow: visible;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  pointer-events: none;
+}
+
+.audience-scene-glow {
+  position: absolute;
+  top: 15%;
+  right: 5%;
+  width: 75%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 39, 50, 0.17) 0%,
+    rgba(255, 90, 90, 0.08) 45%,
+    transparent 72%
+  );
+  filter: blur(22px);
+}
+
+.audience-bottles {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: right center;
+  filter: drop-shadow(0 16px 22px rgba(90, 20, 20, 0.1));
+  animation: audienceFloatingArtwork 6s ease-in-out infinite;
+}
+
+@keyframes audienceFloatingArtwork {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-9px);
+  }
+}
+
+/* ==========================================
+   OPPORTUNITY CARDS
+========================================== */
+
+.audience-grid {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  align-items: stretch;
+  gap: 15px;
+}
+
+.audience-card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.95);
+  border-radius: 19px;
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 9px 28px rgba(70, 25, 25, 0.075);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.audience-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 36px rgba(70, 25, 25, 0.14);
+}
+
+.audience-card-image {
+  position: relative;
+  height: 165px;
+  flex: 0 0 auto;
+  overflow: hidden;
+  background: #f5d9d0;
+}
+
+.audience-card-image::after {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(20, 10, 10, 0.03) 30%,
+    rgba(30, 10, 10, 0.28) 100%
+  );
+  content: "";
+  pointer-events: none;
+}
+
+.audience-card-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.65s ease;
+}
+
+.audience-card:hover .audience-card-image img {
+  transform: scale(1.07);
+}
+
+.audience-card-number {
+  position: absolute;
+  top: 9px;
+  left: 12px;
+  z-index: 1;
+  color: rgba(255, 255, 255, 0.95);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 42px;
+  font-weight: 700;
+  line-height: 1;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
+}
+
+.audience-card-icon {
+  position: absolute;
+  right: 13px;
+  bottom: -2px;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  width: 49px;
+  height: 49px;
+  border: 4px solid #fff8f4;
+  border-radius: 50%;
+  background: var(--audience-red);
+  color: white;
+}
+
+.audience-card-content {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: 19px 15px 15px;
+}
+
+.audience-card-label {
+  display: block;
+  margin-bottom: 9px;
+  color: var(--audience-red);
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: 0.7px;
+  line-height: 1.5;
+}
+
+.audience-card-content h3 {
+  margin: 0 0 11px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(17px, 1.3vw, 21px);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.45px;
+}
+
+.audience-card-content p {
+  margin: 0 0 19px;
+  color: var(--audience-muted);
+  font-size: 11px;
+  line-height: 1.75;
+}
+
+.audience-card-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-top: auto;
+  padding-top: 13px;
+  border-top: 1px solid rgba(40, 30, 30, 0.09);
+  color: var(--audience-red);
+  font-size: 10px;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.audience-card-link svg {
+  flex: 0 0 auto;
+  transition: transform 0.25s ease;
+}
+
+.audience-card-link:hover svg {
+  transform: translate(3px, -3px);
+}
+
+/* ==========================================
+   BOTTOM RED CTA BANNER
+========================================== */
+
+.audience-bottom-cta {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-top: 20px;
+  padding: 23px 28px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  border-radius: 22px;
+  background:
+    radial-gradient(
+      circle at 100% 0,
+      rgba(255, 255, 255, 0.14),
+      transparent 35%
+    ),
+    linear-gradient(
+      110deg,
+      #d8101e,
+      #ff202a 55%,
+      #d8101e
+    );
+  box-shadow: 0 12px 30px rgba(205, 16, 28, 0.18);
+  color: white;
+}
+
+.audience-cta-icon {
+  display: grid;
+  place-items: center;
+  width: 55px;
+  height: 55px;
+  flex: 0 0 auto;
+  border-radius: 50%;
+  background: #fff;
+  color: var(--audience-red);
+}
+
+.audience-cta-copy {
+  min-width: 0;
+  flex: 1;
+}
+
+.audience-cta-copy > span {
+  display: block;
+  margin-bottom: 6px;
+  color: rgba(255, 255, 255, 0.84);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.audience-cta-copy h3 {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(18px, 2vw, 27px);
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.audience-bottom-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  min-height: 49px;
+  padding: 0 21px;
+  flex: 0 0 auto;
+  border: 1px solid white;
+  border-radius: 50px;
+  background: #fff;
+  color: var(--audience-red);
+  font-size: 11px;
+  font-weight: 800;
+  text-decoration: none;
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease;
+}
+
+.audience-bottom-button:hover {
+  transform: translateY(-3px);
+  background: #fff0ed;
+}
+
+/* ==========================================
+   LAPTOP
+========================================== */
+
+@media (max-width: 1250px) {
+  .audience-container {
+    width: calc(100% - 52px);
+  }
+
+  .audience-hero {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 0.85fr);
+    min-height: 355px;
+  }
+
+  .audience-heading h2 {
+    font-size: clamp(39px, 4.5vw, 57px);
+  }
+
+  .audience-product-scene {
+    right: -20px;
+    width: 58%;
+    height: 410px;
+  }
+
+  .audience-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .audience-card-image {
+    height: 175px;
+  }
+
+  .audience-card-content h3 {
+    font-size: 20px;
+  }
+}
+
+/* ==========================================
+   TABLET
+========================================== */
+
+@media (max-width: 800px) {
+  .audience-section {
+    padding: 42px 0;
+  }
+
+  .audience-container {
+    width: calc(100% - 36px);
+  }
+
+  .audience-hero {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    min-height: auto;
+  }
+
+  .audience-heading {
+    padding: 18px 0 0;
+  }
+
+  .audience-heading h2 {
+    font-size: clamp(42px, 7vw, 60px);
+  }
+
+  .audience-product-scene {
+    position: relative;
+    top: auto;
+    right: auto;
+    width: 100%;
+    height: 300px;
+    margin-top: 4px;
+  }
+
+  .audience-bottles {
+    object-position: center;
+  }
+
+  .audience-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .audience-card-image {
+    height: 180px;
+  }
+
+  .audience-card-content h3 {
+    font-size: 21px;
+  }
+
+  .audience-bottom-cta {
+    flex-wrap: wrap;
+  }
+
+  .audience-cta-copy {
+    flex: 1 1 calc(100% - 85px);
+  }
+
+  .audience-bottom-button {
+    width: 100%;
+  }
+}
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width: 520px) {
+  .audience-section {
+    padding: 32px 0;
+  }
+
+  .audience-container {
+    width: calc(100% - 28px);
+  }
+
+  .audience-heading h2 {
+    font-size: clamp(35px, 9vw, 46px);
+    letter-spacing: -1.4px;
+    line-height: 1.02;
+  }
+
+  .audience-heading > p {
+    font-size: 13px;
+    line-height: 1.8;
+  }
+
+  .audience-eyebrow {
+    margin-bottom: 17px;
+    font-size: 9px;
+  }
+
+  .audience-product-scene {
+    height: 220px;
+  }
+
+  .audience-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .audience-card {
+    display: grid;
+    grid-template-columns: 38% minmax(0, 1fr);
+    min-height: 205px;
+  }
+
+  .audience-card-image {
+    height: 100%;
+    min-height: 205px;
+  }
+
+  .audience-card-number {
+    top: 10px;
+    left: 9px;
+    font-size: 30px;
+  }
+
+  .audience-card-icon {
+    right: 6px;
+    bottom: 7px;
+    width: 40px;
+    height: 40px;
+    border-width: 3px;
+  }
+
+  .audience-card-content {
+    padding: 14px 12px;
+  }
+
+  .audience-card-label {
+    font-size: 7px;
+    letter-spacing: 0.35px;
+  }
+
+  .audience-card-content h3 {
+    font-size: 18px;
+  }
+
+  .audience-card-content p {
+    font-size: 10px;
+    line-height: 1.65;
+  }
+
+  .audience-card-link {
+    font-size: 9px;
+  }
+
+  .audience-bottom-cta {
+    gap: 12px;
+    padding: 17px;
+    border-radius: 17px;
+  }
+
+  .audience-cta-icon {
+    width: 44px;
+    height: 44px;
+  }
+
+  .audience-cta-copy h3 {
+    font-size: 19px;
+  }
+
+  .audience-bottom-button {
+    min-height: 45px;
+    font-size: 10px;
+  }
+}
+
+/* ==========================================
+   ACCESSIBILITY
+========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .audience-bottles {
+    animation: none;
+  }
+
+  .audience-card,
+  .audience-card-image img,
+  .audience-card-link svg,
+  .audience-hero-cta,
+  .audience-bottom-button {
+    transition: none;
+  }
+}
