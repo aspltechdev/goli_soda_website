@@ -1,4 +1,3 @@
-
 import { motion, useReducedMotion } from "framer-motion";
 import {
   Lightbulb,
@@ -13,7 +12,7 @@ import {
 import "./Audience.css";
 import audienceBg from "../assets/audiencebg.png";
 
-// Business opportunities
+// Business opportunities - UPDATED WITH YOUR NEW ENHANCED GOLI SODA IMAGES
 const opportunities = [
   {
     number: "01",
@@ -22,8 +21,7 @@ const opportunities = [
     label: "START YOUR JOURNEY",
     description:
       "Turn your business idea into a practical plan and explore opportunities in the traditional beverage industry.",
-    image:
-      "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=85",
+    image: "/1.jpg",
   },
   {
     number: "02",
@@ -32,8 +30,7 @@ const opportunities = [
     label: "BUILD YOUR FOUNDATION",
     description:
       "Explore production facilities, bottling equipment, packaging, and manufacturing operations.",
-    image:
-      "https://images.unsplash.com/photo-1567789884554-0b844b597180?auto=format&fit=crop&w=800&q=85",
+    image: "/2.jpg",
   },
   {
     number: "03",
@@ -42,8 +39,7 @@ const opportunities = [
     label: "REACH MORE MARKETS",
     description:
       "Develop retailer relationships, plan territories, and explore new distribution markets.",
-    image:
-      "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=800&q=85",
+    image: "/3.jpg",
   },
   {
     number: "04",
@@ -52,8 +48,7 @@ const opportunities = [
     label: "CONNECT WITH CUSTOMERS",
     description:
       "Explore product availability, stock planning, and business opportunities in your local market.",
-    image:
-      "https://images.unsplash.com/photo-1604719312566-8912e9c8a213?auto=format&fit=crop&w=800&q=85",
+    image: "/4.jpg",
   },
   {
     number: "05",
@@ -62,8 +57,7 @@ const opportunities = [
     label: "EXPLORE EXPANSION",
     description:
       "Evaluate partnerships, private-label possibilities, beverage brands, and business expansion.",
-    image:
-      "https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=800&q=85",
+    image: "/5.jpg",
   },
 ];
 
@@ -163,12 +157,6 @@ function Audience() {
             }}
           >
             <div className="audience-scene-glow" />
-
-            {/* <img
-              className="audience-bottles"
-              src={audienceBg}
-              alt=""
-            /> */}
           </motion.div>
         </div>
 
@@ -194,7 +182,7 @@ function Audience() {
                 <div className="audience-card-image">
                   <img
                     src={item.image}
-                    alt=""
+                    alt={item.title}
                     loading="lazy"
                   />
 

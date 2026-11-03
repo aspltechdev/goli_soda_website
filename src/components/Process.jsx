@@ -1,4 +1,3 @@
-
 import { motion, useReducedMotion } from "framer-motion";
 import {
   MessageCircle,
@@ -19,8 +18,7 @@ const steps = [
     title: "Initial Discussion",
     description:
       "Share your business idea, goals, budget considerations, and vision for entering the Goli Soda industry.",
-    image:
-      "https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=700&q=85",
+    image: "/6.jpg",
     label: "SHARE YOUR VISION",
   },
   {
@@ -29,8 +27,7 @@ const steps = [
     title: "Opportunity Assessment",
     description:
       "Explore suitable business models, target markets, operational requirements, and potential challenges.",
-    image:
-      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=700&q=85",
+    image: "/7.jpg",
     label: "EXPLORE THE MARKET",
   },
   {
@@ -39,8 +36,7 @@ const steps = [
     title: "Business Planning",
     description:
       "Outline your business structure, resource requirements, distribution approach, and implementation priorities.",
-    image:
-      "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=700&q=85",
+    image: "/8.jpg",
     label: "CREATE YOUR ROADMAP",
   },
   {
@@ -49,8 +45,7 @@ const steps = [
     title: "Setup Guidance",
     description:
       "Review practical considerations for manufacturing, retail operations, distribution, or franchise development.",
-    image:
-      "https://images.unsplash.com/photo-1567789884554-0b844b597180?auto=format&fit=crop&w=700&q=85",
+    image: "/9.jpg",
     label: "BUILD YOUR BUSINESS",
   },
   {
@@ -59,8 +54,7 @@ const steps = [
     title: "Growth Strategy",
     description:
       "Identify next steps for market development, business improvement, and potential expansion.",
-    image:
-      "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=700&q=85",
+    image: "/10.jpg",
     label: "PLAN YOUR NEXT STAGE",
   },
 ];
@@ -131,7 +125,7 @@ function Process() {
                   <img
                     className="process-card-image"
                     src={step.image}
-                    alt=""
+                    alt={step.title}
                     loading="lazy"
                   />
 
